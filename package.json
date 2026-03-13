@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test": "nx run-many -t test"
+    "test": "nx run-many -t test",
+    "lint": "nx run-many -t lint",
+    "format:write": "nx format:write",
+    "format:check": "nx format:check",
+    "prepare": "husky"
   },
   "private": true,
   "devDependencies": {
@@ -31,9 +35,11 @@
     "eslint-plugin-jsx-a11y": "6.10.1",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "5.0.0",
+    "husky": "^9.1.7",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
     "jsonc-eslint-parser": "^2.1.0",
+    "lint-staged": "^16.3.3",
     "nx": "22.5.1",
     "prettier": "~3.6.2",
     "tslib": "^2.3.0",
@@ -46,6 +52,13 @@
     "apps/*",
     "libs/*"
   ],
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,mts,mjs,cjs}": [
+      "nx format:write --files",
+      "nx affected --target=lint -- --fix"
+    ],
+    "*.{json,md,css,html}": "nx format:write --files"
+  },
   "dependencies": {
     "@types/webextension-polyfill": "^0.12.5",
     "react": "^19.0.0",
