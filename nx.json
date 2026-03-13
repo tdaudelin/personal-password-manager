@@ -72,6 +72,14 @@
     }
   },
   "targetDefaults": {
+    "e2e": {
+      "cache": true,
+      "inputs": ["default", "^production"],
+      "outputs": [
+        "{workspaceRoot}/test-output/playwright/browser-extension-e2e",
+        "{workspaceRoot}/test-output/playwright-report"
+      ]
+    },
     "test": {
       "cache": true,
       "inputs": ["default", "^production"],

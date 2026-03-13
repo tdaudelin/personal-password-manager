@@ -31,6 +31,7 @@ node_modules
 /.sass-cache
 /coverage
 test-output/
+.tmp/
 npm-debug.log
 yarn-error.log
 
