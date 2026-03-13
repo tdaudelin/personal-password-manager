@@ -1,1 +1,1 @@
-npx lint-staged
+mise exec -- npx lint-staged
