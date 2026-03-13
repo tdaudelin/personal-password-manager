@@ -1,2 +1,3 @@
 [tools]
 "github:steveyegge/beads" = "0.60"
+node = "24"
