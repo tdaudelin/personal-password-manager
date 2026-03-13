@@ -5,6 +5,12 @@
   "references": [
     {
       "path": "./apps/browser-extension"
+    },
+    {
+      "path": "./libs/core"
+    },
+    {
+      "path": "./libs/shared"
     }
   ]
 }
