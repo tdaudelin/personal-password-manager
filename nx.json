@@ -64,5 +64,12 @@
         "linter": "eslint"
       }
     }
+  },
+  "targetDefaults": {
+    "test": {
+      "cache": true,
+      "inputs": ["default", "^production"],
+      "outputs": ["{workspaceRoot}/test-output/coverage/{projectName}"]
+    }
   }
 }
