@@ -34,6 +34,7 @@
     "tslib": "^2.3.0",
     "typescript": "~5.9.2",
     "vite": "^7.0.0",
+    "vite-plugin-web-extension": "^4.5.0",
     "vitest": "^4.0.0"
   },
   "workspaces": [
@@ -41,7 +42,9 @@
     "libs/*"
   ],
   "dependencies": {
+    "@types/webextension-polyfill": "^0.12.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "webextension-polyfill": "^0.12.0"
   }
 }

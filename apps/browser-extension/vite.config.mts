@@ -1,6 +1,7 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import webExtension from 'vite-plugin-web-extension'
 
 export default defineConfig(() => ({
   root: import.meta.dirname,
@@ -13,11 +14,12 @@ export default defineConfig(() => ({
     port: 4200,
     host: 'localhost',
   },
-  plugins: [react()],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [],
-  // },
+  plugins: [
+    react(),
+    webExtension({
+      manifest: 'src/manifest.json',
+    }),
+  ],
   build: {
     outDir: './dist',
     emptyOutDir: true,

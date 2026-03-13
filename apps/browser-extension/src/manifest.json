@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Personal Password Manager",
+  "version": "0.0.1",
+  "description": "A personal password manager browser extension.",
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "Personal Password Manager"
+  },
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/index.ts"]
+    }
+  ],
+  "permissions": ["storage"]
+}
