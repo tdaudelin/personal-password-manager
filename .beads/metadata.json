@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_database": "personal_password_manager",
+  "project_id": "6859f73a-ffd8-408d-aaad-a14ffbe76593"
+}
