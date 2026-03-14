@@ -3,7 +3,7 @@ import type {
   NewEntry,
   LoginEntry,
   SecureNoteEntry,
-} from '@mm/shared'
+} from '@ppm/shared'
 
 export function createEntry(
   entries: VaultEntry[],

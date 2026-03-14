@@ -1,4 +1,4 @@
-import type { EncryptedVault } from '@mm/shared'
+import type { EncryptedVault } from '@ppm/shared'
 
 export interface IStorageProvider {
   readVault(): Promise<EncryptedVault | undefined>

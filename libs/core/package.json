@@ -1,5 +1,5 @@
 {
-  "name": "core",
+  "name": "@ppm/core",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -16,6 +16,9 @@
   },
   "dependencies": {
     "tslib": "^2.3.0",
+    "hash-wasm": "^4.12.0",
+    "webextension-polyfill": "^0.12.0",
+    "@ppm/shared": "0.0.1",
     "vitest": "^4.0.0"
   },
   "nx": {

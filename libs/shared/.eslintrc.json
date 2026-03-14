@@ -1,6 +1,11 @@
 {
   "extends": ["../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*", "**/out-tsc", "**/vitest.config.*.timestamp*"],
+  "ignorePatterns": [
+    "!**/*",
+    "**/*.mts",
+    "**/out-tsc",
+    "**/vitest.config.*.timestamp*"
+  ],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],

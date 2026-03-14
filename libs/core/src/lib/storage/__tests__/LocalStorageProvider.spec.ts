@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import type { EncryptedVault } from '@mm/shared'
+import type { EncryptedVault } from '@ppm/shared'
 
 // Mock webextension-polyfill before importing LocalStorageProvider
 const mockStorage: Record<string, string> = {}

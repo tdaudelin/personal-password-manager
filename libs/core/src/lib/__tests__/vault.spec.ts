@@ -6,7 +6,7 @@ import {
   serializeVault,
   deserializeVault,
 } from '../vault.js'
-import type { VaultEntry, NewEntry } from '@mm/shared'
+import type { VaultEntry, NewEntry } from '@ppm/shared'
 
 const loginData: NewEntry = {
   type: 'login',

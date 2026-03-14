@@ -1,5 +1,5 @@
 import browser from 'webextension-polyfill'
-import type { EncryptedVault } from '@mm/shared'
+import type { EncryptedVault } from '@ppm/shared'
 import type { IStorageProvider } from './IStorageProvider.js'
 
 const VAULT_KEY = 'ppm_vault'

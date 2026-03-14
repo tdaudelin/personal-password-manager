@@ -1,16 +1,16 @@
 import { argon2id } from 'hash-wasm'
 
-export function generateSalt(): Uint8Array {
+export function generateSalt(): Uint8Array<ArrayBuffer> {
   return crypto.getRandomValues(new Uint8Array(16))
 }
 
-export function generateIV(): Uint8Array {
+export function generateIV(): Uint8Array<ArrayBuffer> {
   return crypto.getRandomValues(new Uint8Array(12))
 }
 
 export async function deriveKey(
   password: string,
-  salt: Uint8Array,
+  salt: Uint8Array<ArrayBuffer>,
 ): Promise<{ key: CryptoKey; kdf: 'argon2id' | 'pbkdf2' }> {
   try {
     const hashBytes = await argon2id({
@@ -24,7 +24,7 @@ export async function deriveKey(
     })
     const key = await crypto.subtle.importKey(
       'raw',
-      hashBytes,
+      hashBytes as Uint8Array<ArrayBuffer>,
       { name: 'AES-GCM' },
       false,
       ['encrypt', 'decrypt'],
@@ -38,12 +38,12 @@ export async function deriveKey(
 
 async function deriveKeyPbkdf2(
   password: string,
-  salt: Uint8Array,
+  salt: Uint8Array<ArrayBuffer>,
 ): Promise<CryptoKey> {
   const enc = new TextEncoder()
   const keyMaterial = await crypto.subtle.importKey(
     'raw',
-    enc.encode(password),
+    enc.encode(password) as Uint8Array<ArrayBuffer>,
     'PBKDF2',
     false,
     ['deriveKey'],
@@ -60,20 +60,20 @@ async function deriveKeyPbkdf2(
 export async function encrypt(
   key: CryptoKey,
   plaintext: string,
-): Promise<{ iv: Uint8Array; ciphertext: ArrayBuffer }> {
+): Promise<{ iv: Uint8Array<ArrayBuffer>; ciphertext: ArrayBuffer }> {
   const iv = generateIV()
   const enc = new TextEncoder()
   const ciphertext = await crypto.subtle.encrypt(
     { name: 'AES-GCM', iv },
     key,
-    enc.encode(plaintext),
+    enc.encode(plaintext) as Uint8Array<ArrayBuffer>,
   )
   return { iv, ciphertext }
 }
 
 export async function decrypt(
   key: CryptoKey,
-  iv: Uint8Array,
+  iv: Uint8Array<ArrayBuffer>,
   ciphertext: ArrayBuffer,
 ): Promise<string> {
   const plaintext = await crypto.subtle.decrypt(
