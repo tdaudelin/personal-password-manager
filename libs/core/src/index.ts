@@ -1,1 +1,5 @@
 export * from './lib/core.js'
+export * from './lib/crypto.js'
+export * from './lib/vault.js'
+export * from './lib/storage/IStorageProvider.js'
+export * from './lib/storage/LocalStorageProvider.js'
