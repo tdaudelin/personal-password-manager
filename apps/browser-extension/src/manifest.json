@@ -9,7 +9,18 @@
   },
   "background": {
     "service_worker": "src/background/index.ts",
+    "scripts": ["src/background/index.ts"],
     "type": "module"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "personal-password-manager@local",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": ["none"],
+        "optional": []
+      }
+    }
   },
   "content_scripts": [
     {

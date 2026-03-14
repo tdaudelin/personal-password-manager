@@ -3,6 +3,23 @@
   "version": "0.0.1",
   "private": true,
   "nx": {
-    "tags": ["scope:app"]
+    "tags": [
+      "scope:app"
+    ],
+    "targets": {
+      "firefox-compat": {
+        "executor": "nx:run-commands",
+        "options": {
+          "commands": [
+            "node -e \"const fs=require('fs');const m=JSON.parse(fs.readFileSync('apps/browser-extension/dist/manifest.json','utf8'));delete m.background.service_worker;delete m.background.type;fs.mkdirSync('.tmp/firefox-lint',{recursive:true});fs.cpSync('apps/browser-extension/dist','.tmp/firefox-lint',{recursive:true,force:true});fs.writeFileSync('.tmp/firefox-lint/manifest.json',JSON.stringify(m,null,2));\"",
+            "web-ext lint --source-dir=.tmp/firefox-lint"
+          ],
+          "parallel": false
+        },
+        "dependsOn": [
+          "build"
+        ]
+      }
+    }
   }
 }

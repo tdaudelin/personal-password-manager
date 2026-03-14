@@ -9,6 +9,7 @@
     "format:check": "nx format:check",
     "e2e": "nx e2e browser-extension-e2e",
     "e2e:ci": "nx e2e browser-extension-e2e --configuration=ci",
+    "e2e:firefox-compat": "nx run browser-extension:firefox-compat",
     "prepare": "husky"
   },
   "private": true,
@@ -50,7 +51,8 @@
     "typescript": "~5.9.2",
     "vite": "^7.0.0",
     "vite-plugin-web-extension": "^4.5.0",
-    "vitest": "^4.0.0"
+    "vitest": "^4.0.0",
+    "web-ext": "^10.0.0"
   },
   "workspaces": [
     "apps/*",
