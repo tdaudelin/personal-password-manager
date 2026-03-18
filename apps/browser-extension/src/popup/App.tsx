@@ -30,7 +30,7 @@ export default function App() {
   }
 
   if (appState === 'UNINITIALIZED') {
-    return <SetupView onSetupComplete={() => setAppState('LOCKED')} />
+    return <SetupView onSetupComplete={handleUnlocked} />
   }
 
   if (appState === 'LOCKED') {

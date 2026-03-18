@@ -4,7 +4,6 @@ import {
   encrypt,
   decrypt,
   generateSalt,
-  generateIV,
   createEntry,
   updateEntry,
   deleteEntry,
@@ -83,9 +82,8 @@ async function handleMessage(msg: VaultRequest): Promise<VaultResponse> {
       try {
         const salt = generateSalt()
         const { key, kdf } = await deriveKey(msg.masterPassword, salt)
-        const iv = generateIV()
         const emptyPayload = serializeVault([])
-        const { ciphertext } = await encrypt(key, emptyPayload)
+        const { iv, ciphertext } = await encrypt(key, emptyPayload)
         await storage.writeVault({
           version: 1,
           kdf,
