@@ -26,5 +26,9 @@ test('popup loads and shows the setup screen on first launch', async () => {
   await page.goto(`chrome-extension://${extensionId}/src/popup/index.html`)
   await expect(page.getByText('Create Master Password')).toBeVisible()
 
+  const bodyBox = await page.locator('body').boundingBox()
+  expect(bodyBox?.width).toBe(360)
+  expect(bodyBox?.height).toBeGreaterThanOrEqual(480)
+
   await context.close()
 })

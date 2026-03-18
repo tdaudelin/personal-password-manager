@@ -30,4 +30,11 @@ describe('App', () => {
     render(<App />)
     expect(screen.getByText('Loading…')).toBeTruthy()
   })
+
+  it('renders non-empty content in each state', async () => {
+    mockSend.mockResolvedValue({ type: 'STATUS', state: 'UNINITIALIZED' })
+    const { container } = render(<App />)
+    await waitFor(() => expect(container.firstChild).not.toBeNull())
+    expect((container.firstChild as HTMLElement).innerHTML).not.toBe('')
+  })
 })

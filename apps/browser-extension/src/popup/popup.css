@@ -1,0 +1,190 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  width: 360px;
+  min-height: 480px;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  background: #fff;
+  color: #111;
+  padding: 16px;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #444;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+button {
+  cursor: pointer;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  background: #f5f5f5;
+}
+
+button:hover:not(:disabled) {
+  background: #e8e8e8;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+button[type='submit'] {
+  background: #4a90e2;
+  color: #fff;
+  border-color: #4a90e2;
+}
+
+button[type='submit']:hover:not(:disabled) {
+  background: #357abd;
+}
+
+/* Vault header */
+.vault-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.vault-header div {
+  display: flex;
+  gap: 8px;
+}
+
+/* Entry list */
+.entry-list section {
+  margin-bottom: 16px;
+}
+
+.entry-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.entry-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.entry-title {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.entry-subtitle {
+  font-size: 12px;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.entry-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.empty {
+  color: #888;
+  font-size: 13px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Password field with show/hide toggle */
+.password-field {
+  display: flex;
+  gap: 6px;
+}
+
+.password-field input {
+  flex: 1;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* Status messages */
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  margin: 6px 0;
+}
+
+.warning {
+  font-size: 12px;
+  color: #856404;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 12px;
+}
