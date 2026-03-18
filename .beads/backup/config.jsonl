@@ -8,4 +8,5 @@
 {"key":"compact_tier2_dep_levels","value":"5"}
 {"key":"compaction_enabled","value":"false"}
 {"key":"issue_prefix","value":"personal-password-manager"}
+{"key":"kv.memory.json","value":"Always use jq for json manipulation instead of python"}
 {"key":"schema_version","value":"6"}

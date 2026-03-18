@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "build": "nx build browser-extension",
+    "build:watch": "nx build browser-extension --watch",
+    "serve": "nx serve browser-extension",
+    "check": "npm run lint && npm run build && npm run test",
     "test": "nx run-many -t test",
     "lint": "nx run-many -t lint",
     "format:write": "nx format:write",
